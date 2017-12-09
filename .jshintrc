@@ -12,6 +12,7 @@
     "browser": true,
     "smarttabs": true,
     "globals": {
+		"require": true,
         "jQuery": true,
         "angular": true,
         "console": true,
@@ -26,6 +27,7 @@
         "expect": true,
         "xdescribe": true,
         "xit": true,
-        "spyOn": true
+        "spyOn": true,
+		"Chart": true
     }
 }

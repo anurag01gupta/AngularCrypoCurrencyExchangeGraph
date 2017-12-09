@@ -17,7 +17,10 @@ var wiredep = require('wiredep');
 var options = config.getWiredepOptions();
 var lengths = Math.ceil(wiredep(options).js.length / 5);
 var wire1A = wiredep(options).js.splice(0, lengths);
-
+var wire2A = wiredep(options).js.splice(lengths, lengths);
+var wire3A = wiredep(options).js.splice(lengths * 2, lengths);
+var wire4A = wiredep(options).js.splice(lengths * 3, lengths);
+var wire5A = wiredep(options).js.splice(lengths * 4, lengths);
 
 
 gulp.task('clean', function () {
@@ -37,7 +40,7 @@ gulp.task('preparePartials', function () {
 
 
 
-gulp.task('prepareControllers', ['lint', 'wire1'], function () {
+gulp.task('prepareControllers', ['lint', 'wire1', 'wire2', 'wire3', 'wire4', 'wire5'], function () {
     return gulp.src(config.js)
         .pipe($.ngAnnotate())
         .pipe($.uglify())
@@ -46,7 +49,7 @@ gulp.task('prepareControllers', ['lint', 'wire1'], function () {
         .pipe(gulp.dest(config.dist));
 });
 
-gulp.task('prepareControllersBase', ['lint', 'wire1'], function () {
+gulp.task('prepareControllersBase', ['lint', 'wire1', 'wire2', 'wire3', 'wire4', 'wire5'], function () {
 
     return gulp.src(config.requirementJS)
         .pipe($.ngAnnotate())
@@ -95,6 +98,59 @@ gulp.task('wire1', function () {
         .pipe($.uglify())
         .pipe($.concat({
             path: config.vendorjs1,
+            cwd: ''
+        }))
+        .pipe($.rev())
+        .pipe(gulp.dest(config.dist));
+});
+gulp.task('wire2', function () {
+    return gulp.src(wire2A)
+        // .pipe(debug({
+        //     title: 'Wiring up the JS dependencies'
+        // }))
+        .pipe($.ngAnnotate())
+        .pipe($.uglify())
+        .pipe($.concat({
+            path: config.vendorjs2,
+            cwd: ''
+        }))
+        .pipe($.rev())
+        .pipe(gulp.dest(config.dist));
+});
+gulp.task('wire3', function () {
+    return gulp.src(wire3A)
+        // .pipe(debug({
+        //     title: 'Wiring up the JS dependencies'
+        // }))
+        .pipe($.ngAnnotate())
+        .pipe($.uglify())
+        .pipe($.concat({
+            path: config.vendorjs3,
+            cwd: ''
+        }))
+        .pipe($.rev())
+        .pipe(gulp.dest(config.dist));
+});
+gulp.task('wire4', function () {
+    return gulp.src(wire4A)
+        // .pipe(debug({
+        //     title: 'Wiring up the JS dependencies'
+        // }))
+        .pipe($.ngAnnotate())
+        .pipe($.uglify())
+        .pipe($.concat({
+            path: config.vendorjs4,
+            cwd: ''
+        }))
+        .pipe($.rev())
+        .pipe(gulp.dest(config.dist));
+});
+gulp.task('wire5', function () {
+    return gulp.src(wire5A)
+        .pipe($.ngAnnotate())
+        .pipe($.uglify())
+        .pipe($.concat({
+            path: config.vendorjs5,
             cwd: ''
         }))
         .pipe($.rev())

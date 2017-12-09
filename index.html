@@ -2,12 +2,12 @@
 <html>
 	<head>
 		<title></title>
+		<link rel="shortcut icon" href="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="utf-8">
 		<link href="app.less" type="text/css" rel="stylesheet/less">
-		<link rel="shortcut icon" href="">
 	</head>
-	<body ng-app="CryptoCurrency">
+	<body>
 
 		<!-- Livereload script for development only (stripped during dist build) -->
 		<script src="http://localhost:35729/livereload.js" data-concat="false"></script>
@@ -19,22 +19,43 @@
 		<script src="bower_components/lodash/dist/lodash.js"></script>
 		<script src="bower_components/moment/moment.js"></script>
 		<script src="bower_components/angular/angular.js"></script>
+		<script src="bower_components/Chart.js/dist/Chart.js"></script>
 		<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 		<script src="bower_components/angular-animate/angular-animate.js"></script>
 		<script src="bower_components/angular-resource/angular-resource.js"></script>
 		<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 		<!-- Add New Bower Component JS Above -->
-
+ 
 
 		<!-- Main App JS -->
 		<script src="app.js"></script>
-	  <!-- Add New Component JS Above -->
+		<!-- Add New Component JS Above -->
 
-	  	<div>
+	  	<div ng-app="CryptoCurrency" ng-controller="CryptoCurrencyController">
 			<div id="content" class="container">
-				<div class="row">
-					<div ui-view>
+				<div class="row col-md-10 clear center-content">
+					<div class="border-container center-content">
+						<div class="btn-gap-xs fc-button-group pull-left">
+							<button class="fc-button fc-state-default fc-corner-left" ng-class="{'fc-state-active': 1}" ng-click="buttonClick(1, 'my-chart1')">
+								<span>1 Hour</span>
+							</button>
+							<button class="fc-button fc-state-default " ng-class="{'fc-state-active': active===24}" ng-click="buttonClick(24, 'my-chart2')">
+								<span>1 Day</span>
+							</button>
+							<button class="fc-button fc-state-default" ng-class="{'fc-state-active': active===168}" ng-click="buttonClick(168, 'my-chart3')">
+								<span>1 Week</span>
+							</button>
+						</div>
+						<button class="fc-button pull-right fc-state-default fc-corner-left" ng-class="{'fc-state-active': 1}" ng-click="getCharData()">
+							<span>Refresh</span>
+						</button>
+						<div class="my-chart">
+							<canvas id="my-chart1" ng-if="chartDataInfo.period===1" class="my-chart"></canvas>
+							<canvas id="my-chart2" ng-if="chartDataInfo.period===24" class="my-chart"></canvas>
+							<canvas id="my-chart3" ng-if="chartDataInfo.period===168" class="my-chart"></canvas>
+						</div>
 					</div>
+<!--					<div ui-view></div>-->
 				</div>
 			</div>
 		</div>

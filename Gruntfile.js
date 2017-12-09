@@ -40,7 +40,8 @@ module.exports = function (grunt) {
     connect: {
       main: {
         options: {
-          port: 9001
+			port: 9001,
+			open: true
         }
       }
     },
@@ -58,7 +59,9 @@ module.exports = function (grunt) {
     jshint: {
       main: {
         options: {
-            jshintrc: '.jshintrc'
+            jshintrc: '.jshintrc',
+			ignores: ['vendors/**/*.js'],
+			reporterOutput : ""
         },
         src: createFolderGlobs('*.js')
       }

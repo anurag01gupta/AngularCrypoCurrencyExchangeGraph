@@ -45,6 +45,10 @@ module.exports = function () {
         template: 'templates.js',
         cryptojs: 'crypto.js',
         vendorjs1: 'vendors1.js',
+        vendorjs2: 'vendors2.js',
+        vendorjs3: 'vendors3.js',
+        vendorjs4: 'vendors4.js',
+        vendorjs5: 'vendors5.js',
         requirementjs: 'requirementjs.js',
 
         //Module Definitions
