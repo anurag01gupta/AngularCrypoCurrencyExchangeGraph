@@ -7,6 +7,8 @@
 ## Technologies to use
 * AngularJs
 * Charts.js
+* Less
+* Css
 
 ## To run this application
 1. Clone and run npm install and bower install in the folder path of the project.
