@@ -5,6 +5,5 @@
 * You can read more about this api here: https://coinmarketcap.com/api/
 
 ## Technologies to use
-* NodeJs 
 * AngularJs
 * Charts.js
