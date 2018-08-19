@@ -13,3 +13,6 @@
 ## To run this application
 1. Clone and run npm install and bower install in the folder path of the project.
 2. Then, run grunt serve in command prompt to host the application locally
+
+## Screenshot
+![screen shot 2018-08-19 at 12 15 54](https://user-images.githubusercontent.com/15166401/44306343-3f813400-a3aa-11e8-8444-cbe63c34e6d3.png)
