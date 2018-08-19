@@ -16,3 +16,6 @@
 
 ## Screenshot
 ![screen shot 2018-08-19 at 12 15 54](https://user-images.githubusercontent.com/15166401/44306343-3f813400-a3aa-11e8-8444-cbe63c34e6d3.png)
+
+
+![screenshot2](https://user-images.githubusercontent.com/15166401/44307929-fbe9f280-a3c8-11e8-819d-08f983b3779d.PNG)
