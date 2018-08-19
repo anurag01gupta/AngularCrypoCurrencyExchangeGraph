@@ -5,6 +5,6 @@
 * You can read more about this api here: https://coinmarketcap.com/api/
 
 ## Technologies to use
-* NodeJs/ExpressJs for running server
-* AngularJs 1.x for collecting the data from Apis and displyaing views
-* D3.js or Charts.js or any other library for rendering charts
+* NodeJs 
+* AngularJs
+* Charts.js
